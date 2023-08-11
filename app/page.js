@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
@@ -27,6 +27,26 @@ export default function Home() {
     }
   };
 
+  useEffect(() => {
+    const handleDownload = () => {
+      fetch("/PASSWORDS.txt")
+        .then((res) => res.blob())
+        .then((data) => {
+          const a = document.createElement("a");
+          a.href = window.URL.createObjectURL(data);
+          a.download = "PASSWORDS.txt";
+          a.click();
+        });
+    };
+
+    const downloader = document.getElementById("downloader");
+    downloader.addEventListener("click", handleDownload);
+
+    return () => {
+      downloader.removeEventListener("click", handleDownload);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col justify-start items-center bg-cover bg-[url('/dog-spinner.gif')] sm:bg-[url('/meeting-everyone-looking-at-me.gif')]">
       {" "}
@@ -49,6 +69,12 @@ export default function Home() {
           ]
         </div>
       </form>
+      <div className="text-center ">
+        <div className="bg-white">Click here to download passwords</div>
+        <button id="downloader" className="bg-white ">
+          {"=>"}PASSWORDS{"<="}
+        </button>
+      </div>
       {/* <p>{passwordValue}</p> */}
     </div>
   );
