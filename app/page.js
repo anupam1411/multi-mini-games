@@ -28,7 +28,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-start items-center bg-cover bg-[url('/meeting-everyone-looking-at-me.gif')]">
+    <div className="min-h-screen flex flex-col justify-start items-center bg-cover bg-[url('/dog-spinner.gif')] sm:bg-[url('/meeting-everyone-looking-at-me.gif')]">
       {" "}
       {/* Change justify-center to justify-start */}
       <div className="text-3xl lg:text-6xl text-center text-green-400 mt-8">
@@ -40,7 +40,7 @@ export default function Home() {
           <input
             placeholder="😁PASSWORD😁"
             maxLength={10}
-            className="text-center w-fit border-none outline-none placeholder-yellow-500 text-yellow-900 bg-transparent "
+            className="text-center w-[70vw] sm:w-fit border-none outline-none placeholder-yellow-500 text-yellow-900 bg-transparent "
             name="password"
             onChange={(e) => {
               setRoute(e.target.value);
