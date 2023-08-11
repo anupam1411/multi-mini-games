@@ -4,7 +4,7 @@ import Link from "next/link";
 
 function BackHome() {
   return (
-    <div className=" h-fit w-fit">
+    <div className=" h-fit w-fit invert">
       Click here to Exit Game :
       <button>
         <Link href="/">

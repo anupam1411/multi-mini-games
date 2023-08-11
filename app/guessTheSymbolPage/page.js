@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import GuessGame from "@/components/guessGame";
-import BackHome from "@/components/backHome";
 
 function GuessGamePage() {
   // const emojis = ["@", "#", "$", "%", "&", "?", "+", "="];
@@ -21,7 +20,6 @@ function GuessGamePage() {
       <div className="text-2xl md:text-4xl font-semibold mb-4">
         Find this emoji {emoji}
       </div>
-      <BackHome />
       <GuessGame targetemoji={emoji} />
     </div>
   );

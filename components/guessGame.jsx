@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Reload from "./reload";
+import BackHome from "./backHome";
 
 // const emojis = ["@", "#", "$", "%", "&", "?", "+", "="];
 const emojis = ["😊", "😑", "😂", "😒", "😁", "😉", "😎", "😮"];
@@ -84,6 +85,7 @@ const GuessGame = ({ targetemoji }) => {
 
   return (
     <div className="flex flex-col items-center justify-center h-[80vh] w-[80vw] bg-gray-900">
+      <BackHome />
       <Reload />
       <div className="border-2 rounded-md p-4 mb-4">
         {grid.map((row, i) => (

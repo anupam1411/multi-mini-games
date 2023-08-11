@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Switch from "react-switch";
 import useSound from "use-sound";
+import BackHome from "./backHome";
 
 const UselessMachine = () => {
   const [totalSwitches, setTotalSwitches] = useState(8);
@@ -62,6 +63,9 @@ const UselessMachine = () => {
             />
           </div>
         ))}
+      </div>
+      <div className="flex justify-center">
+        <BackHome />
       </div>
     </div>
   );
